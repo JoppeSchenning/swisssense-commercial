@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Swiss Sense</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: #ffffff;
+      color: #1C2125;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── Header ── */
+    header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 36px 24px 28px;
+    }
+
+    .logo {
+      display: block;
+      height: 108px;
+      width: auto;
+    }
+
+    /* ── Main ── */
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 24px 48px;
+      gap: 28px;
+    }
+
+    .tagline {
+      font-size: clamp(13px, 2vw, 15px);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #D0021B;
+      text-align: center;
+    }
+
+    /* 16:9 responsive video wrapper */
+    .video-wrapper {
+      width: 100%;
+      max-width: 960px;
+      position: relative;
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 24px 64px rgba(0, 0, 0, 0.6);
+    }
+
+    .video-wrapper::before {
+      content: '';
+      display: block;
+      padding-top: 56.25%; /* 16:9 */
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .subtitle {
+      font-size: clamp(12px, 1.8vw, 14px);
+      color: rgba(28, 33, 37, 0.45);
+      letter-spacing: 0.06em;
+      text-align: center;
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 20px 24px;
+      font-size: 12px;
+      color: rgba(28, 33, 37, 0.4);
+      letter-spacing: 0.05em;
+      border-top: 1px solid rgba(28, 33, 37, 0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="https://www.swisssense.nl">
+      <img class="logo" src="https://www.kyden.com/hs-fs/hubfs/SwissSense_ZonderPayOff-CMYK.png?width=3502&height=362&name=SwissSense_ZonderPayOff-CMYK.png" alt="Swiss Sense" />
+    </a>
+  </header>
+
+  <main>
+    <p class="tagline">For.Every.Body</p>
+
+    <div class="video-wrapper">
+      <iframe
+        src="https://player.vimeo.com/video/1168401695?h=2529c57230&autoplay=1&loop=1&background=1&muted=1"
+        title="Swiss Sense commercial"
+        allow="autoplay; fullscreen; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+
+    <p class="subtitle">swisssense.nl</p>
+  </main>
+
+  <footer>
+    &copy; 2026 Swiss Sense &mdash; Door consumenten verkozen tot béste slaapwinkel van Nederland
+  </footer>
+
+</body>
+</html>
