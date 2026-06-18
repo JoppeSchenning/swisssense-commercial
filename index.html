@@ -26,8 +26,37 @@
   </style>
 </head>
 <body>
-  <video autoplay muted loop playsinline>
+  <video id="vid" autoplay muted loop playsinline preload="auto">
     <source src="SwissSenseCustomerDisplayGIF.webm" type="video/webm" />
   </video>
+
+  <script>
+    var vid = document.getElementById('vid');
+
+    // Force play as soon as enough data is loaded
+    vid.addEventListener('canplay', function () {
+      vid.play().catch(function () {
+        // If autoplay blocked, reload page and try again
+        setTimeout(function () { location.reload(); }, 3000);
+      });
+    });
+
+    // If video fails to load, reload the page after 5 seconds
+    vid.addEventListener('error', function () {
+      setTimeout(function () { location.reload(); }, 5000);
+    });
+
+    // If video stalls, reload after 5 seconds
+    vid.addEventListener('stalled', function () {
+      setTimeout(function () { location.reload(); }, 5000);
+    });
+
+    // Watchdog: if no playback starts within 8 seconds, reload
+    setTimeout(function () {
+      if (vid.paused || vid.currentTime === 0) {
+        location.reload();
+      }
+    }, 8000);
+  </script>
 </body>
 </html>
