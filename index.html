@@ -14,27 +14,20 @@
       background: #ffffff;
     }
 
-    iframe {
+    video {
       position: fixed;
       top: 50%;
       left: 50%;
-      /* Scale up to always cover the full screen while keeping 16:9 */
-      width: 100vw;
-      height: 56.25vw; /* 16:9 based on width */
-      min-height: 100vh;
-      min-width: 177.78vh; /* 16:9 based on height */
       transform: translate(-50%, -50%);
-      border: 0;
-      pointer-events: none;
+      width: 100vw;
+      height: 100vh;
+      object-fit: contain;
     }
   </style>
 </head>
 <body>
-  <iframe
-    src="https://player.vimeo.com/video/1168401695?h=2529c57230&autoplay=1&loop=1&background=1&muted=1"
-    title="Swiss Sense commercial"
-    allow="autoplay; fullscreen; picture-in-picture"
-    allowfullscreen
-  ></iframe>
+  <video autoplay muted loop playsinline>
+    <source src="SwissSenseCustomerDisplayGIF.webm" type="video/webm" />
+  </video>
 </body>
 </html>
